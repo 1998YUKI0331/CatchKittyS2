@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+{% if r_title != '-0' %}
+    {{ r_title }}<br>
+    <a><img src="{{ r_image }}" height="300px;"></a>
+    <br>{{ r_price }}<br>
+    <a href="{{ r_link }}">{{ r_link }}</a>
+{% else %}
+    <script type="text/javascript">
+        alert('해당 제품이 없습니다. 알림 페이지로 이동합니다.');
+        window.location.href = "http://localhost:8000/kitty/create/";
+    </script>
+{% endif %}
+
+{% endblock %}
+
+

@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>캣 치 키 티</title>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}"> 
+</head>
+
+<body>
+    <!-- header -->
+    <style type="text/css">
+        .jumbotron1{
+            background-color: #ffe3ee;
+            height: 140px;
+            color: black;
+            padding: 25px;
+        }
+    </style>
+    <div class="jumbotron1 text-center">
+        <h1>Catch Your Kitty 😻🎀❤️</h1>
+        <p>공식 산리오 수입 쇼핑몰에서 키티 소식을 제일 먼저 받아보자!</p>
+    </div>
+
+    <!-- content -->
+    <div class="container pt-3">
+        {% block content %}
+        <div class="container">
+            <form method="post" class="post-form my-3">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-danger">검색</button>
+            </form>
+        <!--    <a href="{% url 'kitty:create' %}" class="btn btn-danger">예약</a>  -->
+        </div>
+        {% endblock %}
+    </div>
+
+    <!-- footer -->
+    <style type="text/css">
+        .jumbotron2{
+            background-color: #ffe3ee;
+            height: 100px;
+            color: black;
+            padding: 25px;
+            position: fixed; bottom: 0; width: 100%;
+        }
+    </style>
+    <div class="jumbotron2 text-center mt-5 mb-0">
+        Copyright ⓒ 2016 YUKI All Rights Reserved.
+        <p>This Homepage is Powered by <span class="text-primary">YUKI</span> / Designed by <span class="text-primary">YUKI</span></p>
+    </div>
+</body>
+</html>
+
+
+
